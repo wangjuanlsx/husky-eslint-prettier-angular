@@ -27,7 +27,7 @@ export class ToggleSelectComponent implements OnInit,OnChanges, ControlValueAcce
   onModelChange: Function = () => {};
   onModelTouched: Function = () => {};
   ngOnInit() {
-
+    console.log("初始化");
   }
   ngOnChanges(changes: SimpleChanges){
 
