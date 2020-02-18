@@ -6,14 +6,17 @@
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
-    "lint": "ng lint",
     "e2e": "ng e2e",
     "precommit": "lint-staged"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
   "lint-staged": {
-    "src/**/*.js": [
-      "eslint --fix --ext .js",
-      "prettier --write"
+    "*.ts": [
+      "eslint --fix"
     ]
   },
   "private": true,
@@ -27,7 +30,11 @@
     "@angular/platform-browser": "^6.1.0",
     "@angular/platform-browser-dynamic": "^6.1.0",
     "@angular/router": "^6.1.0",
+    "@typescript-eslint/eslint-plugin": "^2.20.0",
+    "@typescript-eslint/parser": "^2.20.0",
     "core-js": "^2.5.4",
+    "eslint": "^6.8.0",
+    "lint-staged": "^10.0.7",
     "rxjs": "^6.3.3",
     "zone.js": "~0.8.26"
   },
@@ -41,7 +48,6 @@
     "@types/node": "~8.9.4",
     "babel-eslint": "^10.0.3",
     "codelyzer": "~4.2.1",
-    "eslint": "^6.8.0",
     "eslint-config-ali": "^9.0.2",
     "eslint-config-prettier": "^6.10.0",
     "eslint-plugin-import": "^2.20.1",
@@ -54,7 +60,6 @@
     "karma-coverage-istanbul-reporter": "~2.0.0",
     "karma-jasmine": "~1.1.1",
     "karma-jasmine-html-reporter": "^0.2.2",
-    "lint-staged": "^10.0.7",
     "prettier": "^1.19.1",
     "protractor": "~5.4.0",
     "ts-node": "~5.0.1",

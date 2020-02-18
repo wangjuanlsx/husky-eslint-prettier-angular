@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output, forwardRef, ViewChild, ElementRef, OnChanges, SimpleChanges,AfterViewChecked, AfterViewInit,} from "@angular/core";
+import { Component,OnInit,forwardRef, OnChanges, SimpleChanges,} from "@angular/core";
 import {ControlValueAccessor, NG_VALUE_ACCESSOR,} from "@angular/forms";
 import {ToggleSelectValues,} from "./toggle-select-values";
 /**
@@ -27,15 +27,16 @@ export class ToggleSelectComponent implements OnInit,OnChanges, ControlValueAcce
   onModelChange: Function = () => {};
   onModelTouched: Function = () => {};
   ngOnInit() {
-    console.log("初始化");
+      console.log("初始化");
   }
   ngOnChanges(changes: SimpleChanges){
-
+    console.log(changes);
   }
   //ControlValueAccessor接口
   //将模型中的新值写入视图或 DOM 属性中
   writeValue(value: ToggleSelectValues): void {
       if (value) {
+        console.log(value);
       }
   }
   //当控件接收到 change 事件后，调用的函数
@@ -47,7 +48,4 @@ export class ToggleSelectComponent implements OnInit,OnChanges, ControlValueAcce
   registerOnTouched(fn: Function): void {
       this.onModelTouched = fn;
   }
-
-  setDisabledState(val: boolean): void {}
-
 }
